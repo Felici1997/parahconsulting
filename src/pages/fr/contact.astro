@@ -1,0 +1,37 @@
+---
+// Import the necessary components
+import MainLayout from '@/layouts/MainLayout.astro';
+import ContactSection from '@components/sections/fr/ContactSection_fr.astro';
+import { SITE } from '@data/constants';
+
+const pageTitle: string = `Nous Contacter | ${SITE.title}`;
+const metaDescription =
+  "Vous avez des questions ou souhaitez discuter d'un projet ? Contactez-nous et élaborons ensemble la solution parfaite avec nos outils et services.";
+const ogTitle = 'Nous Contacter | PARAH Consulting & Services';
+---
+
+<MainLayout
+  title={pageTitle}
+  lang="fr"
+  customDescription={metaDescription}
+  customOgTitle={ogTitle}
+  structuredData={{
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': 'https://www.parah-consulting.com/fr/contact',
+    url: 'https://www.parah-consulting.com/fr/contact',
+    name: 'Nous Contacter | PARAH Consulting & Services',
+    description:
+      'Vous souhaitez un accompagnement, un devis ou un rendez-vous gratuit ? Contactez PARAH Consulting & Services à Brazzaville.',
+    isPartOf: {
+      '@type': 'WebSite',
+      url: 'https://www.parah-consulting.com',
+      name: 'PARAH',
+      description:
+        'PARAH Consulting & Services — Votre levier de croissance à Brazzaville.',
+    },
+    inLanguage: 'fr',
+  }}
+>
+  <ContactSection />
+</MainLayout>

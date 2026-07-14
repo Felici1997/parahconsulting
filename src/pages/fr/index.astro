@@ -1,0 +1,125 @@
+---
+// Import the necessary components
+import MainLayout from '@/layouts/MainLayout.astro';
+import HeroSection from '@components/sections/landing/HeroSection.astro';
+import HeroSectionAlt from '@components/sections/landing/HeroSectionAlt.astro';
+import FeaturesGeneral from '@components/sections/features/FeaturesGeneral.astro';
+import FeaturesNavs from '@components/sections/features/FeaturesNavs.astro';
+import TestimonialsSection from '@components/sections/testimonials/TestimonialsSection.astro';
+import PricingSection from '@components/sections/pricing/PricingSection.astro';
+import FAQ from '@components/sections/misc/FAQ.astro';
+import heroImage from '@images/hero-image.avif';
+import faqs from '@data/faqs.json';
+import features from '@data/features.json';
+import pricing from '@data/pricing.json';
+import featureImage from '@images/features-image.avif';
+
+import { getRelativeLocaleUrl } from 'astro:i18n';
+---
+
+<MainLayout lang="fr">
+  <HeroSection
+    title=`<span class="text-orange-400 dark:text-orange-300">PARAH</span> Consulting & Services`
+    subTitle="Cabinet de conseil, formation et services basé à Brazzaville. Nous accompagnons les entrepreneurs, les PME et les institutions publiques à chaque étape de leur développement."
+    primaryBtn="Découvrir nos services"
+    primaryBtnURL={getRelativeLocaleUrl('fr', 'services')}
+    secondaryBtn="Nous contacter"
+    secondaryBtnURL={getRelativeLocaleUrl('fr', 'contact')}
+    withReview={false}
+    rating=""
+    starCount={5}
+    reviews=""
+    src={heroImage}
+    alt="PARAH Consulting & Services"
+  />
+
+  <FeaturesGeneral
+    title="Pourquoi choisir PARAH ?"
+    subTitle="Qui sommes-nous ? Cabinet de conseil et services basé à Brazzaville, nous avons une conviction : chaque entreprise, petite ou grande, a le potentiel de se développer. Notre mission est de lui donner les moyens d'y parvenir."
+    src={featureImage}
+    alt="PARAH Consulting"
+    features={features}
+  />
+
+  <FeaturesNavs
+    title="Nos valeurs fondamentales"
+    tabs={[
+      {
+        heading: 'Intégrité',
+        content:
+          'La transparence et l\'éthique guident chacune de nos actions. Nous construisons des relations de confiance durables avec nos clients et partenaires, en plaçant l\'honnêteté au cœur de nos pratiques professionnelles.',
+        svg: 'tools',
+        src: '/valeur-1.webp',
+        alt: 'Valeur Intégrité',
+        first: true,
+      },
+      {
+        heading: 'Cohésion',
+        content:
+          "Nous croyons en la force du collectif. En fédérant les talents et en favorisant la collaboration, nous créons une synergie unique qui démultiplie l'impact de nos actions et renforce la résilience des organisations que nous accompagnons.",
+        svg: 'dashboard',
+        src: '/valeur-2.webp',
+        alt: 'Valeur Cohésion',
+        second: true,
+      },
+      {
+        heading: 'Excellence',
+        content:
+          "Nous refusons le statu quo. Notre seul indicateur de succès est l'impact concret sur vos résultats. La qualité et la performance sont notre quête permanente.",
+        svg: 'house',
+        src: '/valeur-3.webp',
+        alt: 'Valeur Excellence',
+      },
+      {
+        heading: 'Performance',
+        content:
+          'Chaque action est mesurée, chaque résultat est évalué. Notre engagement : un impact concret et durable sur votre croissance.',
+        svg: 'house',
+        src: '/valeur-4.webp',
+        alt: 'Valeur Performance',
+      },
+    ]}
+  />
+
+  <TestimonialsSection
+    title="Notre vision & mission"
+    subTitle="Devenir le partenaire stratégique de référence en Afrique Centrale, reconnu pour anticiper les mutations du marché et armer durablement nos clients."
+    testimonials={[
+      {
+        content:
+          "Notre mission : déployer une expertise de terrain et un engagement absolu pour concevoir des solutions sur mesure, innovantes et immédiatement exploitables, générant une croissance mesurable pour nos partenaires.",
+        author: 'Direction PARAH',
+        role: 'Consulting & Services',
+        avatarSrc: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"%3E%3Ccircle cx="20" cy="20" r="20" fill="%232596be"/%3E%3Ctext x="20" y="26" text-anchor="middle" fill="white" font-size="18" font-weight="bold"%3EP%3C/text%3E%3C/svg%3E',
+      },
+    ]}
+    statistics={[
+      {
+        count: '3',
+        description: "pôles d'expertise complémentaires",
+      },
+      {
+        count: '98%',
+        description: 'de clients satisfaits de nos prestations',
+      },
+      {
+        count: '100%',
+        description: 'engagement pour la réussite de nos clients',
+      },
+      {
+        count: '1',
+        description: 'slogan : Votre levier de croissance',
+      },
+    ]}
+  />
+
+  <PricingSection pricing={pricing} />
+
+  <FAQ title="Questions<br />fréquentes" faqs={faqs} />
+
+  <HeroSectionAlt
+    title="Construisons ensemble votre réussite"
+    subTitle="Vous avez un projet ? Contactez-nous dès aujourd'hui pour un premier échange. Transformer le potentiel en performance."
+    url={getRelativeLocaleUrl('fr', 'contact')}
+  />
+</MainLayout>

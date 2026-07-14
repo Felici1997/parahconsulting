@@ -1,0 +1,141 @@
+---
+// Importing necessary components
+import MainLayout from '@/layouts/MainLayout.astro';
+import PrimaryCTA from '@components/ui/buttons/PrimaryCTA.astro';
+import CardSmall from '@components/ui/cards/CardSmall.astro';
+import CardWide from '@components/ui/cards/CardWide.astro';
+import FeaturesStatsAlt from '@components/sections/features/FeaturesStatsAlt.astro';
+import TestimonialsSectionAlt from '@components/sections/testimonials/TestimonialsSectionAlt.astro';
+
+// Importing necessary functions from Astro
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { SITE } from '@data/constants';
+
+// Fetching all the product related content and sorting it by main.id
+const product: CollectionEntry<'products'>[] = (
+  await getCollection('products', ({ id }) => {
+    return id.startsWith('en/');
+  })
+).sort(
+  (a: CollectionEntry<'products'>, b: CollectionEntry<'products'>) =>
+    a.data.main.id - b.data.main.id
+);
+
+// Define variables for page content
+const title: string = 'Nos Solutions';
+const subTitle: string =
+  "Des packs adaptés à chaque étape de votre développement. Que vous soyez un entrepreneur en herbe ou une PME en pleine croissance, PARAH vous propose un accompagnement sur mesure pour transformer votre potentiel en performance.";
+
+// Testimonial data that will be rendered in the component
+const testimonials = [
+  // First testimonial data
+  {
+    content:
+      ' "Grâce à l\'accompagnement PARAH, nous avons structuré notre processus de vente et doublé notre chiffre d\'affaires en six mois. Leur expertise de terrain fait toute la différence." ',
+    author: 'Christelle M.',
+    role: 'Fondatrice | BrazzaBeauty',
+    avatarSrc: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"%3E%3Ccircle cx="20" cy="20" r="20" fill="%232596be"/%3E%3Ctext x="20" y="26" text-anchor="middle" fill="white" font-size="18" font-weight="bold"%3ECM%3C/text%3E%3C/svg%3E',
+    avatarAlt: 'Image Description',
+  },
+  // Second testimonial data
+  {
+    content:
+      ' "Les formations PARAH ont transformé notre approche du management. Nos équipes sont plus soudées et notre productivité a augmenté de 40%. Je recommande vivement." ',
+    author: 'Jean-Pierre K.',
+    role: 'DG | LogiCongo SARL',
+    avatarSrc: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"%3E%3Ccircle cx="20" cy="20" r="20" fill="%232596be"/%3E%3Ctext x="20" y="26" text-anchor="middle" fill="white" font-size="18" font-weight="bold"%3EJK%3C/text%3E%3C/svg%3E',
+    avatarAlt: 'Image Description',
+  },
+  // Third testimonial data
+  {
+    content:
+      ' "Le coaching entrepreneurial de PARAH m\'a aidé à structurer mon business plan et à décrocher un financement. Un accompagnement précieux pour tout jeune entrepreneur à Brazzaville." ',
+    author: 'Sarah N.',
+    role: 'Créatrice | EcoCongo',
+    avatarSrc: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"%3E%3Ccircle cx="20" cy="20" r="20" fill="%232596be"/%3E%3Ctext x="20" y="26" text-anchor="middle" fill="white" font-size="18" font-weight="bold"%3ESN%3C/text%3E%3C/svg%3E',
+    avatarAlt: 'Image Description',
+  },
+];
+
+const pageTitle: string = `Nos offres | ${SITE.title}`;
+const metaDescription =
+  "Découvrez les packs PARAH : Consulting 360°, Services Opérationnels et Capital Humain. Un accompagnement sur mesure pour entrepreneurs et PME à Brazzaville.";
+const ogTitle = 'Nos Offres | PARAH Consulting & Services';
+---
+
+<MainLayout
+  title={pageTitle}
+  customDescription={metaDescription}
+  customOgTitle={ogTitle}
+  structuredData={{
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': 'https://www.parah-consulting.com/products',
+    url: 'https://www.parah-consulting.com/products',
+    name: 'Nos Offres | PARAH Consulting & Services',
+    description:
+      "Découvrez les packs PARAH : Consulting 360°, Services Opérationnels et Capital Humain.",
+    isPartOf: {
+      '@type': 'WebSite',
+      url: 'https://www.parah-consulting.com',
+      name: 'PARAH',
+      description:
+        'PARAH Consulting & Services — Votre levier de croissance à Brazzaville.',
+    },
+    inLanguage: 'en-US',
+  }}
+>
+  <div
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
+      <div class="flex items-center gap-12">
+        <h1
+          class="text-2xl font-bold tracking-tight text-balance text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200"
+        >
+          {title}
+        </h1>
+        {
+          subTitle && (
+            <p class="hidden max-w-(--breakpoint-sm) text-pretty text-neutral-600 md:block dark:text-neutral-400">
+              {subTitle}
+            </p>
+          )
+        }
+      </div>
+      <PrimaryCTA title="Témoignages" url="#testimonials" noArrow={true} />
+    </div>
+    {
+      /* Displaying products in alternating styles. Alternative product gets different card styling.
+    Maps through all product entries and displays them with either CardSmall or CardWide based on their position. */
+    }
+    <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+      {
+        product.map((product, index) => {
+          const position = index % 4;
+          if (position === 0 || position === 3) {
+            return <CardSmall product={product} />;
+          } else {
+            return <CardWide product={product} />;
+          }
+        })
+      }
+    </section>
+  </div>
+  {/* Features statistics section */}
+  <FeaturesStatsAlt
+    title="Pourquoi choisir PARAH ?"
+    subTitle="Nous transformons votre potentiel en performance. Chaque mission PARAH est conçue sur mesure, avec un engagement total pour des résultats concrets et durables."
+    benefits={[
+      'Expertise terrain : des consultants qui connaissent la réalité des PME africaines.',
+      'Accompagnement 360° : du diagnostic à la mise en œuvre, nous sommes à vos côtés.',
+      'Résultats mesurables : notre seul indicateur de succès est votre croissance.',
+    ]}
+  />
+  {/* Testimonials section */}
+  <TestimonialsSectionAlt
+    title="Ce que disent nos clients"
+    testimonials={testimonials}
+  />
+</MainLayout>

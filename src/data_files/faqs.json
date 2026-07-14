@@ -1,0 +1,29 @@
+{
+  "subTitle": "Trouvez les réponses à vos questions sur PARAH et nos services.",
+  "faqs": [
+    {
+      "question": "Quels types de services propose PARAH ?",
+      "answer": "PARAH propose 3 pôles d'expertise complémentaires : Consulting 360° (diagnostic, création d'entreprise, accompagnement entrepreneurial), Services Opérationnels (sourcing international, importation, gestion des réseaux sociaux), et Capital Humain & Performance (orientation, coaching, team building, formations professionnelles)."
+    },
+    {
+      "question": "Où est basé PARAH ?",
+      "answer": "PARAH est basé à Brazzaville, en République du Congo. Nous intervenons auprès des entrepreneurs, PME et institutions dans toute la région."
+    },
+    {
+      "question": "Puis-je bénéficier d'un premier rendez-vous gratuit ?",
+      "answer": "Oui, nous proposons un premier échange gratuit pour comprendre vos besoins et vous proposer une solution adaptée. Contactez-nous pour prendre rendez-vous."
+    },
+    {
+      "question": "Quels sont les délais d'intervention ?",
+      "answer": "Les délais varient selon le service : un diagnostic PME peut prendre 3 à 10 jours, un accompagnement entrepreneurial s'étend sur 3 à 12 mois. Nous établissons un calendrier précis lors de notre premier échange."
+    },
+    {
+      "question": "PARAH propose-t-il des formations ?",
+      "answer": "Oui, nous proposons des formations professionnelles dans plusieurs domaines : entrepreneuriat, gestion de projet, marketing et vente, communication professionnelle, leadership et management. Nos formats incluent séminaires, ateliers, masterclass et coaching individuel."
+    },
+    {
+      "question": "Comment puis-je contacter PARAH ?",
+      "answer": "Vous pouvez nous contacter via le formulaire sur notre site, par email à contact@parah-consulting.com, ou par téléphone au +242 00 000 0000. Nous sommes également présents sur Facebook, LinkedIn et WhatsApp."
+    }
+  ]
+}

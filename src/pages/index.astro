@@ -1,0 +1,123 @@
+---
+// Import the necessary components
+import MainLayout from '@/layouts/MainLayout.astro';
+import HeroSection from '@components/sections/landing/HeroSection.astro';
+import HeroSectionAlt from '@components/sections/landing/HeroSectionAlt.astro';
+import FeaturesGeneral from '@components/sections/features/FeaturesGeneral.astro';
+import FeaturesNavs from '@components/sections/features/FeaturesNavs.astro';
+import TestimonialsSection from '@components/sections/testimonials/TestimonialsSection.astro';
+import PricingSection from '@components/sections/pricing/PricingSection.astro';
+import FAQ from '@components/sections/misc/FAQ.astro';
+import WavePattern from '@components/WavePattern.astro';
+import faqs from '@data/faqs.json';
+import features from '@data/features.json';
+import pricing from '@data/pricing.json';
+
+---
+
+<MainLayout>
+  <div class="relative">
+    <WavePattern class="pointer-events-none fixed inset-0 z-0 h-full w-full" />
+    <div class="relative z-10">
+  <HeroSection
+    title=`<span class="text-orange-400 dark:text-orange-300">Votre levier de croissance</span>`
+    subTitle="Cabinet de conseil, formation et accompagnement des entrepreneurs et PME à Brazzaville. Nous transformons le potentiel en performance."
+    primaryBtn="Découvrir nos services"
+    primaryBtnURL="/services"
+    secondaryBtn="Contactez-nous"
+    secondaryBtnURL="/contact"
+    withReview={false}
+    src="/hero-parah.jpg"
+    alt="PARAH Consulting & Services — Votre levier de croissance"
+  />
+
+  <FeaturesGeneral
+    title="Qui sommes-nous ?"
+    subTitle="PARAH est une entreprise Consulting & Services basée à Brazzaville. Notre vocation est d'être l'architecte de votre réussite opérationnelle. Nous intervenons aux côtés des entrepreneurs, des PME et des institutions pour transformer le potentiel en performance."
+    features={features}
+  />
+
+  <FeaturesNavs
+    title=`Nos <span class="text-orange-400 dark:text-orange-300">engagements</span> — des valeurs en action`
+    tabs={[
+      {
+        heading: 'Intégrité',
+        content:
+          "La transparence absolue et l'éthique guident chacune de nos interventions. L'honnêteté et le professionnalisme sont notre fondation.",
+        svg: 'tools',
+        src: '/valeur-1.webp',
+        alt: 'Valeur Intégrité',
+        first: true,
+      },
+      {
+        heading: 'Cohésion',
+        content:
+          "Nous ne travaillons pas pour vous, mais avec vous. La co-construction et la collaboration sont notre force pour des résultats durables.",
+        svg: 'dashboard',
+        src: '/valeur-2.webp',
+        alt: 'Valeur Cohésion',
+        second: true,
+      },
+      {
+        heading: 'Excellence',
+        content:
+          "Nous refusons le statu quo. Notre seul indicateur de succès est l'impact concret sur vos résultats. La qualité et la performance sont notre quête permanente.",
+        svg: 'house',
+        src: '/valeur-3.webp',
+        alt: 'Valeur Excellence',
+      },
+      {
+        heading: 'Performance',
+        content:
+          'Chaque action est mesurée, chaque résultat est évalué. Notre engagement : un impact concret et durable sur votre croissance.',
+        svg: 'house',
+        src: '/valeur-4.webp',
+        alt: 'Valeur Performance',
+      },
+    ]}
+  />
+
+  <TestimonialsSection
+    title="Notre vision & mission"
+    subTitle="Devenir le partenaire stratégique de référence en Afrique Centrale, reconnu pour anticiper les mutations du marché et armer durablement nos clients."
+    testimonials={[
+      {
+        content:
+          'Notre mission : déployer une expertise de terrain et un engagement absolu pour concevoir des solutions sur mesure, innovantes et immédiatement exploitables, générant une croissance mesurable pour nos partenaires.',
+        author: 'Direction PARAH',
+        role: 'Consulting & Services',
+        avatarSrc: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"%3E%3Ccircle cx="20" cy="20" r="20" fill="%232596be"/%3E%3Ctext x="20" y="26" text-anchor="middle" fill="white" font-size="18" font-weight="bold"%3EP%3C/text%3E%3C/svg%3E',
+      },
+    ]}
+    statistics={[
+      {
+        count: '3',
+        description: 'pôles d\'expertise complémentaires',
+      },
+      {
+        count: '98%',
+        description: 'de clients satisfaits de nos prestations',
+      },
+      {
+        count: '100%',
+        description: 'engagement pour la réussite de nos clients',
+      },
+      {
+        count: '1',
+        description: 'slogan : Votre levier de croissance',
+      },
+    ]}
+  />
+
+  <PricingSection pricing={pricing} />
+
+  <FAQ title="Questions<br />fréquentes" faqs={faqs} />
+
+  <HeroSectionAlt
+    title="Construisons ensemble votre réussite"
+    subTitle="Vous avez un projet ? Contactez-nous dès aujourd'hui pour un premier échange. Transformer le potentiel en performance."
+    url="/contact"
+  />
+    </div>
+  </div>
+</MainLayout>

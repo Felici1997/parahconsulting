@@ -1,0 +1,71 @@
+{
+  "title": "Nos Solutions",
+  "subTitle": "Des packs conçus pour répondre aux besoins spécifiques des entrepreneurs et des entreprises.",
+  "badge": "Recommandé",
+  "thirdOption": "Une demande spécifique ?",
+  "btnText": "Contactez-nous",
+
+  "pack1": {
+    "name": "Pack Créateur",
+    "description": "Pour les porteurs de projets",
+    "price": "Sur mesure",
+    "cents": "",
+    "billingFrequency": "Devis personnalisé",
+    "features": [
+      "Diagnostic du projet",
+      "Business Model",
+      "Business Plan",
+      "Coaching entrepreneurial"
+    ],
+    "purchaseBtnTitle": "Demander un devis",
+    "purchaseLink": "/contact"
+  },
+
+  "pack2": {
+    "name": "Pack PME Performance",
+    "description": "Pour les entreprises en croissance",
+    "price": "Sur mesure",
+    "cents": "",
+    "billingFrequency": "Devis personnalisé",
+    "features": [
+      "Diagnostic organisationnel",
+      "Recommandations stratégiques",
+      "Mise en place d'outils de gestion",
+      "Accompagnement du dirigeant"
+    ],
+    "purchaseBtnTitle": "Demander un devis",
+    "purchaseLink": "/contact"
+  },
+
+  "pack3": {
+    "name": "Pack Achats Internationaux",
+    "description": "Pour les importateurs",
+    "price": "Sur mesure",
+    "cents": "",
+    "billingFrequency": "Devis personnalisé",
+    "features": [
+      "Recherche fournisseurs",
+      "Vérification fournisseurs",
+      "Négociation",
+      "Suivi des commandes"
+    ],
+    "purchaseBtnTitle": "Demander un devis",
+    "purchaseLink": "/contact"
+  },
+
+  "pack4": {
+    "name": "Pack Capital Humain",
+    "description": "Pour les organisations",
+    "price": "Sur mesure",
+    "cents": "",
+    "billingFrequency": "Devis personnalisé",
+    "features": [
+      "Team Building",
+      "Coaching",
+      "Leadership",
+      "Formation professionnelle"
+    ],
+    "purchaseBtnTitle": "Demander un devis",
+    "purchaseLink": "/contact"
+  }
+}
