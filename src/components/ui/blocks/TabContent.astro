@@ -10,7 +10,7 @@ interface Props {
   id: string;
   aria: string;
   src?: any;
-  alt: string;
+  alt?: string;
   first?: boolean;
   second?: boolean;
 }
@@ -45,7 +45,7 @@ This is the full example:
   <!-- Astro Image component to display the image with dynamic classes based on the 'second' property -->
   <Image
     src={src}
-    alt={alt}
+    alt={alt ?? ''}
     class={secondClass}
     draggable={'false'}
     format={'avif'}

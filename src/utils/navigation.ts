@@ -1,12 +1,11 @@
-// An array of links for navigation bar
 const navBarLinks = [
-  { name: 'Home', url: '/' },
+  { name: 'Accueil', url: '/' },
   { name: 'Services', url: '/services' },
-      { name: 'Nos Solutions', url: '/products' },
+  { name: 'Nos Solutions', url: '/products' },
   { name: 'Blog', url: '/blog' },
   { name: 'Contact', url: '/contact' },
 ];
-// An array of links for footer
+
 const footerLinks = [
   {
     section: 'Services',
@@ -14,13 +13,13 @@ const footerLinks = [
       { name: 'Consulting 360°', url: '/services' },
       { name: 'Services Opérationnels', url: '/services' },
       { name: 'Capital Humain', url: '/services' },
-  { name: 'Nos Solutions', url: '/products' },
+      { name: 'Nos Solutions', url: '/products' },
     ],
   },
   {
-    section: 'Company',
+    section: 'Société',
     links: [
-      { name: 'About us', url: '#' },
+      { name: 'À propos', url: '#' },
       { name: 'Blog', url: '/blog' },
       { name: 'Contact', url: '/contact' },
     ],

@@ -16,9 +16,7 @@ interface Props {
   <Icon name="quotation" />
 
   <div class="relative z-10">
-    <p class="text-xl text-neutral-800 italic dark:text-neutral-200">
-      {content}
-    </p>
+    <p class="text-xl text-neutral-800 italic dark:text-neutral-200" set:html={content} />
   </div>
 
   <div class="mt-6">
