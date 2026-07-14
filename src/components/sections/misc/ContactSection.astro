@@ -8,12 +8,11 @@ import PhoneInput from '@components/ui/forms/input/PhoneInput.astro';
 import TextAreaInput from '@components/ui/forms/input/TextAreaInput.astro';
 import Icon from '@components/ui/icons/Icon.astro';
 
-// Define the variables that will be used in this component
-const title: string = 'Contact us';
+const title: string = 'Contactez-nous';
 const subTitle: string =
-  "You have a project, a question, or need tailored support? PARAH is here for you. Reach out and let's build your success together.";
-const formTitle: string = 'Fill in the form below';
-const formSubTitle: string = "We'll get back to you within 24-48 hours.";
+  "Vous avez un projet, une question ou besoin d'un accompagnement sur mesure ? PARAH est à votre écoute. Contactez-nous et construisons ensemble votre réussite.";
+const formTitle: string = 'Remplissez le formulaire ci-dessous';
+const formSubTitle: string = 'Nous vous répondrons sous 24 à 48 heures.';
 ---
 
 {/* Contact Us */}
@@ -46,26 +45,26 @@ const formSubTitle: string = "We'll get back to you within 24-48 hours.";
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <TextInput
                 id="hs-firstname-contacts"
-                label="First Name"
+                label="Prénom"
                 name="hs-firstname-contacts"
               />
               <TextInput
                 id="hs-lastname-contacts"
-                label="Last Name"
-                name="hs-lastname-contacts"
+                label="Nom"
+                name="hs-firstname-contacts"
               />
             </div>
             <EmailContactInput id="hs-email-contacts" />
             <PhoneInput id="hs-phone-number" />
             <TextAreaInput
               id="hs-about-contacts"
-              label="Details"
+              label="Détails"
               name="hs-about-contacts"
             />
           </div>
 
           <div class="mt-4 grid">
-            <AuthBtn title="Send Message" />
+            <AuthBtn title="Envoyer un message" />
           </div>
 
           <div class="mt-3 text-center">
@@ -82,16 +81,16 @@ const formSubTitle: string = "We'll get back to you within 24-48 hours.";
       <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
         <ContactIconBlock
           heading="FAQ"
-          content="Explore our FAQ for quick, clear answers to common queries."
+          content="Explorez notre FAQ pour des réponses rapides et claires aux questions courantes."
           isLinkVisible={true}
-          linkTitle="Visit FAQ"
+          linkTitle="Visiter la FAQ"
           linkURL="#"
           isArrowVisible={true}
           ><Icon name="chatBubble" />
         </ContactIconBlock>
 
         <ContactIconBlock
-          heading="Visit our office"
+          heading="Visitez notre bureau"
           content="PARAH Consulting & Services"
           isAddressVisible={true}
           addressContent="Brazzaville, République du Congo"
@@ -99,8 +98,8 @@ const formSubTitle: string = "We'll get back to you within 24-48 hours.";
         </ContactIconBlock>
 
         <ContactIconBlock
-          heading="Contact us by email"
-          content="Prefer the written word? Drop us an email at"
+          heading="Contactez-nous par e-mail"
+          content="Préférez-vous le texte écrit ? Envoyez-nous un e-mail à"
           isLinkVisible={true}
           linkTitle="contact@parah-consulting.com"
           linkURL="#"
